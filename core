@@ -1,0 +1,22 @@
+import numpy as np
+from scipy.constants import hbar, c, epsilon_0
+
+class MacachorStellarOperators:
+    """
+    A core operator class of The Macachor-Stellar Framework: Φ669 Quantum Propulsion Mathematics.
+    Implements vector-free quantum operators using quaternion algebra for scalar field foundation.
+    """
+    
+    def __init__(self):
+        self.framework_name = "The Macachor-Stellar Framework: Φ669 Quantum Propulsion Mathematics"
+        self.quantum_signature = "Φ669"
+        # Quaternion basis initialization
+        self.quaternion_basis = np.quaternion(1, 0, 0, 0)
+        
+    def scalar_field_operator(self, phi_0, k_modes):
+        """Quantized scalar field operator as defined by the Macachor-Stellar Framework."""
+        # Implementation of the scalar field operator
+        field_operator = np.zeros((len(k_modes), len(k_modes)), dtype=np.complex_)
+        for i, k in enumerate(k_modes):
+            field_operator[i, i] = phi_0 * np.exp(-1j * k)  # Example implementation
+        return field_operator
