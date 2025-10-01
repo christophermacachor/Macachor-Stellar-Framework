@@ -1,0 +1,9 @@
+def codex_signature(self):
+    """Return ceremonial metadata for validator glyph embedding."""
+    return {
+        "Framework": self.framework_name,
+        "Quantum Signature": self.quantum_signature,
+        "Basis": str(self.quaternion_basis),
+        "Glyph Type": "Scalar Field Operator",
+        "Validator Integrity": "Preserved"
+    }
