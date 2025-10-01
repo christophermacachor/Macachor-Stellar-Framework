@@ -1,0 +1,4 @@
+for sym in fundamental_domain:
+    L = symmetry_lengths.get(sym, 1.0)  # Default to unit length
+    k_n = (2 * np.pi * L / hbar) * np.array([1, 2, 3, 5, 8, 13])
+    eigenvalues.extend(k_n)
