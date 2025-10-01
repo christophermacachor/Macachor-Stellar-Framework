@@ -1,0 +1,5 @@
+def validate_phi669_resonance(self, field_operator):
+    """Check if operator spectrum aligns with Φ669 quantization lattice."""
+    spectrum = np.diag(field_operator)
+    quantized = np.isclose(np.abs(spectrum), 669, rtol=0.01)
+    return np.all(quantized)
