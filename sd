@@ -1,0 +1,8 @@
+def codex_metadata():
+    return {
+        "Framework": "The Macachor-Stellar Framework: Φ669 Quantum Propulsion Mathematics",
+        "Quantization Basis": "Fibonacci",
+        "Symmetry Domains": fundamental_domain,
+        "Glyph Type": "Polyhedral Quantization Operator",
+        "Validator Integrity": "Preserved"
+    }
