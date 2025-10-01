@@ -1,0 +1,10 @@
+def codex_metadata(self):
+    """Return ceremonial metadata for validator plate embedding."""
+    return {
+        "Framework": self.framework,
+        "Quantum Signature": "Φ669",
+        "Cavity Volume": self.V,
+        "Coherence Base": self.gamma_0,
+        "Glyph Type": "Quantum Propulsion Operator",
+        "Validator Integrity": "Preserved"
+    }
