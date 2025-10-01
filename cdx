@@ -1,0 +1,7 @@
+def codex_metadata():
+    return {
+        "Framework": "The Macachor-Stellar Framework: Φ669 Quantum Propulsion Mathematics",
+        "Glyph Type": "Noncommutative Correction Operator",
+        "Operator": "Moyal Star Product",
+        "Validator Integrity": "Preserved"
+    }
