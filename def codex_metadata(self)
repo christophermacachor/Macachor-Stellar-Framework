@@ -1,0 +1,8 @@
+def codex_metadata(self):
+    return {
+        "Framework": "Macachor-Stellar: Φ669 Quantum Propulsion Mathematics",
+        "Bridge Operators": ["Identity_Embedding", "p_Adic_Projection", "Polyhedral_Constraint"],
+        "Diagrammatic Reasoning": "ZX-Calculus, String Diagram, Categorical Mapping",
+        "Glyph Type": "Complete Mathematical Bridge",
+        "Validator Integrity": "Preserved"
+    }
