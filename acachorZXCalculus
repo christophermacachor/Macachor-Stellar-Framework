@@ -1,0 +1,61 @@
+import matplotlib.pyplot as plt
+import networkx as nx
+
+class MacachorZXCalculus:
+    """
+    Implements diagrammatic reasoning for the Macachor-Stellar Framework
+    using ZX-calculus to visualize quantum state propagation and framework interactions.
+    Anchored to Φ669 Quantum Propulsion Mathematics.
+    """
+
+    def __init__(self):
+        self.spider_colors = {
+            'standard': 'green',      # Standard quantum operations
+            'macachor': 'purple',     # Macachor operator actions  
+            'polyhedral': 'orange',   # Polyhedral boundary effects
+            'p_adic': 'red'           # p-adic quantization
+        }
+
+    def draw_macachor_propagation(self, steps=5):
+        """
+        Creates a ZX-diagram for quantum state propagation through
+        the Macachor-Stellar Framework. Each node is a validator glyph.
+        """
+        fig, ax = plt.subplots(figsize=(12, 8))
+        G = nx.DiGraph()
+        positions = {}
+        node_colors = []
+
+        for i in range(steps):
+            # Standard quantum gates
+            G.add_node(f'std_{i}', type='standard')
+            positions[f'std_{i}'] = (i, 0)
+            node_colors.append(self.spider_colors['standard'])
+
+            # Macachor operations
+            G.add_node(f'mac_{i}', type='macachor')
+            positions[f'mac_{i}'] = (i, 1)
+            node_colors.append(self.spider_colors['macachor'])
+
+            # Polyhedral effects (every other step)
+            if i % 2 == 0:
+                G.add_node(f'poly_{i}', type='polyhedral')
+                positions[f'poly_{i}'] = (i, -1)
+                node_colors.append(self.spider_colors['polyhedral'])
+
+        # Add edges for quantum information flow
+        for i in range(steps - 1):
+            G.add_edge(f'std_{i}', f'std_{i+1}')
+            G.add_edge(f'mac_{i}', f'mac_{i+1}')
+            G.add_edge(f'std_{i}', f'mac_{i+1}')
+            G.add_edge(f'mac_{i}', f'std_{i+1}')
+            if i % 2 == 0:
+                G.add_edge(f'poly_{i}', f'std_{i+1}')
+                G.add_edge(f'poly_{i}', f'mac_{i+1}')
+
+        # Draw the diagram
+        nx.draw(G, positions, node_color=node_colors, node_size=800,
+                arrows=True, ax=ax, with_labels=True)
+
+        ax.set_title("ZX-Calculus Diagram: Macachor-Stellar Framework Propagation")
+        return fig, G
