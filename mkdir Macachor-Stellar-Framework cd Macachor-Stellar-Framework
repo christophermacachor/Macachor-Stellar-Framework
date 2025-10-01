@@ -1,0 +1,4 @@
+mkdir src tests
+touch src/main.py src/utils.py src/models.py
+touch tests/test_main.py tests/test_utils.py
+touch README.md requirements.txt .gitignore
