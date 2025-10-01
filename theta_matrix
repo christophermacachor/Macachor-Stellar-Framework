@@ -1,0 +1,12 @@
+def noncommutative_correction(theta_matrix, quantum_state):
+    """
+    Applies non-commutative spacetime corrections using the Moyal star product
+    as per The Macachor-Stellar Framework: Φ669 Quantum Propulsion Mathematics.
+    """
+    # Compute the Moyal correction: θ^{μν} ∂_μ φ ∂_ν φ
+    grad_phi = np.gradient(quantum_state)  # Returns list of partial derivatives
+    correction = 0
+    for mu in range(len(grad_phi)):
+        for nu in range(len(grad_phi)):
+            correction += theta_matrix[mu, nu] * grad_phi[mu] * grad_phi[nu]
+    return correction
