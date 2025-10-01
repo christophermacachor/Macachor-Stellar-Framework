@@ -1,0 +1,2 @@
+import quaternion  # instead of np.quaternion
+self.quaternion_basis = quaternion.quaternion(1, 0, 0, 0)
