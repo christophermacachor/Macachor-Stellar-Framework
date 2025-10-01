@@ -1,0 +1,14 @@
+if __name__ == "__main__":
+    bridge = CompleteMathematicalBridge()
+
+    # Visualize the complete mathematical bridge
+    fig = bridge.visualize_complete_bridge()
+    plt.show()
+
+    # Initialize example quantum state
+    psi_initial = np.random.randn(669) + 1j * np.random.randn(669)
+    psi_initial /= np.linalg.norm(psi_initial)
+
+    # Evolve quantum state
+    times, states = bridge.evolve_quantum_state(psi_initial, t_max=10, dt=0.1)
+    print(f"Evolved {len(states)} quantum states through mathematical bridge")
