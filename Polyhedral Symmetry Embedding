@@ -1,0 +1,8 @@
+def apply_polyhedral_constraint(self, thrust, symmetry='A5'):
+    """Embed thrust within polyhedral symmetry domain."""
+    symmetry_factor = {
+        'A5': np.pi / 5,  # Icosahedral
+        'H3': np.pi / 3,  # Hexagonal
+        'H4': np.pi / 4   # Tetrahedral
+    }.get(symmetry, 1)
+    return thrust * symmetry_factor
