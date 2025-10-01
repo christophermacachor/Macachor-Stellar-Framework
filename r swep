@@ -1,0 +1,7 @@
+def resonance_sweep(self, omega_range, grad_phi_expect):
+    """Sweep across omega range to find peak thrust."""
+    thrusts = []
+    for omega in omega_range:
+        thrust = self.thrust_expectation(omega, grad_phi_expect)
+        thrusts.append((omega, thrust))
+    return thrusts
