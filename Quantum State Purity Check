@@ -1,0 +1,7 @@
+def validate_state_purity(self, quantum_state):
+    """Validates that quantum state is pure (i.e., trace of ρ² = 1)."""
+    rho = np.outer(quantum_state, np.conj(quantum_state))
+    purity = np.trace(rho @ rho)
+    is_pure = np.isclose(purity, 1.0, rtol=0.01)
+    self.validation_log.append(f"Quantum state purity: {is_pure}")
+    return is_pure
